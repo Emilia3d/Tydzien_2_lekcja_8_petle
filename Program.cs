@@ -39,6 +39,7 @@ class Program
             while (i <= 1000);
         }
         //ex.3
+        //POPRAWIĆ (0- 1-szy el. ciągu)
         {
             Console.WriteLine("Do którego elementu ma wypisać ciąg Fibbonaciego?");
             string varLast = Console.ReadLine();

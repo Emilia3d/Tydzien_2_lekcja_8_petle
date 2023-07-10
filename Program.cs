@@ -2,20 +2,7 @@
 
 class Program
 {
-    static bool IsPrime(int number)
-    {
-        if (number < 2)
-            return false;
-
-        for (int i = 2; i <= Math.Sqrt(number); i++)
-        {
-            if (number % i == 0)
-                return false;
-        }
-
-        return true;
-    }
-
+    //ex.1
     static void Main()
     {
         int count = 0;
@@ -26,6 +13,50 @@ class Program
                 count++;
         }
 
-        Console.WriteLine("Liczba liczb pierwszych w zakresie 0 - 100: " + count);
+        Console.WriteLine("Liczb pierwszych w zakresie 0 - 100 jest " + count + ".");
+
+        static bool IsPrime(int number)
+        {
+            if (number < 2)
+                return false;
+
+            for (int i = 2; i <= Math.Sqrt(number); i++)
+            {
+                if (number % i == 0)
+                    return false;
+            }
+
+            return true;
+        }
+        //ex. 2
+        {
+            int i = 0;
+            do
+            {
+                Console.WriteLine(i);
+                i += 2;
+            }
+            while (i <= 1000);
+        }
+        //ex.3
+        {
+            Console.WriteLine("Do którego elementu ma wypisać ciąg Fibbonaciego?");
+            string varLast = Console.ReadLine();
+            int last = int.Parse(varLast);
+
+            //int fibbonaci = 0;
+            long fib1 = 0, fib2 = 1;
+            int counter = 0;
+
+            Console.Write("0, ");
+            do
+            {
+                fib2 = fib1 + fib2;
+                fib1 = fib2-fib1;
+                counter++;                
+                Console.Write(fib1 + ", ");
+            }
+            while (counter < last);
+        }
     }
 }

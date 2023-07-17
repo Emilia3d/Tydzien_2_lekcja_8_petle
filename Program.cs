@@ -49,15 +49,28 @@ class Program
             long fib1 = 0, fib2 = 1;
             int counter = 0;
 
-            Console.Write("0, ");
+            Console.Write("\n 0, ");
             do
             {
                 fib2 = fib1 + fib2;
-                fib1 = fib2-fib1;
-                counter++;                
+                fib1 = fib2 - fib1;
+                counter++;
                 Console.Write(fib1 + ", ");
             }
             while (counter < last);
+        }
+        //ex.4 POPRAWIĆ
+        {
+            Console.WriteLine("\n Do jakiej liczby narysować trójkąt?");
+            string varLast = Console.ReadLine();
+            int last = int.Parse(varLast);
+
+            for (int i = 1; i < last; i++)
+            {
+                Console.Write(i);
+                for(int j = 1; j <= i; j++)
+                    Console.WriteLine("");
+            }
         }
     }
 }

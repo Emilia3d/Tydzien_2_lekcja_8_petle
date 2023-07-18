@@ -65,25 +65,27 @@ class Program
             Console.WriteLine("\n Do jakiej liczby narysować trójkąt?");
             string varLast = Console.ReadLine();
             int last = int.Parse(varLast);
+            int level = 1;
+            double factor = 1.0;
 
             for (int i = 1; i <= last; i++)
             {
                 Console.Write(i);
-                int level = 1;
-                double factor = 1;
+                Console.WriteLine("\nliczba = " + i);
+                Console.WriteLine("level = " + level);
+                Console.WriteLine("factor = " + factor);
 
-                if (factor == i / level)
+                if (i / level == factor)
+                {
                     Console.WriteLine("");
+                    factor = factor + 0.5;
                     level++;
-                else 
-                    level = 3;
-                
-                //for(double factor = 1; factor==i/level; factor=factor+0.5)
-                //{
-                //    Console.WriteLine("");
-                //}
-                //level++;
+                }
 
+                else
+                {
+                    Console.WriteLine("level bez zmian");
+                }
             }
         }
     }

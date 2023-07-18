@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Net.Security;
 
 class Program
@@ -87,6 +89,27 @@ class Program
                     Console.WriteLine("level bez zmian");
                 }
             }
+        }
+        //ex.5
+        {
+            Console.WriteLine("ex. 5");
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine(i*i*i);
+            }
+
+            Console.WriteLine();
+        }
+        //ex.6
+        {
+            Console.WriteLine("ex. 6");
+            double sum = 0.0;
+            for (int i = 1; i <= 20; i++)
+            {
+                sum = sum + (1/i);
+            }
+
+            Console.WriteLine(sum);
         }
     }
 }

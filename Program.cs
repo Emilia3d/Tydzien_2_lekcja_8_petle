@@ -65,9 +65,9 @@ class Program
             }
             while (counter < last);
         }
-        //ex.4 POPRAWIĆ
+        //ex.4
         {
-    Console.WriteLine("\n ex. 4");
+            Console.WriteLine("\n ex. 4");
             Console.WriteLine("\n Do jakiej liczby narysować trójkąt?");
             string varLast = Console.ReadLine();
             int last = int.Parse(varLast);
@@ -76,7 +76,7 @@ class Program
 
             for (int i = 1; i <= last; i++)
             {
-                Console.Write(i);
+                Console.Write($"{i} "); 
 
                 if (i / level == factor)
                 {

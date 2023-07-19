@@ -44,7 +44,6 @@ class Program
         //    while (i <= 1000);
         //}
         ////ex.3
-        ////POPRAWIĆ (0- 1-szy el. ciągu)
         //{
         //    Console.WriteLine("\n ex. 3");
         //    Console.WriteLine("Do którego elementu ma wypisać ciąg Fibbonaciego?");
@@ -114,20 +113,45 @@ class Program
             string varDiagonal = Console.ReadLine();
             int diagonal = int.Parse(varDiagonal);
 
-            for (int counterStars = 1; counterStars <= diagonal; counterStars=counterStars+2)
+            if (diagonal % 2 != 0)  //dla nieparzystych
             {
-                int counterSpace = (diagonal-counterStars)/2;
-                Console.Write(new string(' ', counterSpace));
-                Console.Write(new string('*', counterStars));
-                Console.WriteLine(new string(' ', counterSpace));
+                for (int counterStars = 1; counterStars <= diagonal; counterStars = counterStars + 2)
+                {
+                    int counterSpace = (diagonal - counterStars) / 2;
+                    Console.Write(new string(' ', counterSpace));
+                    Console.Write(new string('*', counterStars));
+                    Console.WriteLine(new string(' ', counterSpace));
+                }
+
+                for (int counterStars = diagonal - 2; counterStars >= 1; counterStars = counterStars - 2)
+                {
+                    int counterSpace = (diagonal - counterStars) / 2;
+                    Console.Write(new string(' ', counterSpace));
+                    Console.Write(new string('*', counterStars));
+                    Console.WriteLine(new string(' ', counterSpace));
+                }
             }
-            //for (int counterStars = diagonal; counterStars <= 1; counterStars = counterStars - 2)
-            //{
-            //    int counterSpace = (diagonal - counterStars) / 2;
-            //    Console.Write(new string(' ', counterSpace));
-            //    Console.Write(new string('*', counterStars));
-            //    Console.WriteLine(new string(' ', counterSpace));
-            //}
+
+            else    //dla parzystych
+            {
+                for (int counterStars = 2; counterStars <= diagonal; counterStars = counterStars + 2)
+                {
+                    int counterSpace = (diagonal - counterStars) / 2;
+                    Console.Write(new string(' ', counterSpace));
+                    Console.Write(new string('*', counterStars));
+                    Console.WriteLine(new string(' ', counterSpace));
+                }
+
+                for (int counterStars = diagonal; counterStars >= 2; counterStars = counterStars - 2)
+                {
+                    int counterSpace = (diagonal - counterStars) / 2;
+                    Console.Write(new string(' ', counterSpace));
+                    Console.Write(new string('*', counterStars));
+                    Console.WriteLine(new string(' ', counterSpace));
+                }
+            }
+
+
         }
     }
 }

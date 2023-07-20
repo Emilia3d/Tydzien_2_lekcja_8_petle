@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 class Program
 {
+    private static object nww;
+
     //ex.1
     static void Main()
     {
@@ -18,7 +20,9 @@ class Program
         for (int i = 0; i <= 100; i++)
         {
             if (IsPrime(i))
+            {
                 count++;
+            }
         }
 
         Console.WriteLine("Liczb pierwszych w zakresie 0 - 100 jest " + count + ".");
@@ -38,7 +42,7 @@ class Program
         }
         //ex. 2
         {
-            Console.WriteLine("\n ex. 6");
+            Console.WriteLine("\n ex. 2");
             int i = 0;
             do
             {
@@ -54,7 +58,6 @@ class Program
             string varLast = Console.ReadLine();
             int last = int.Parse(varLast);
 
-            //int fibbonaci = 0;
             long fib1 = 0, fib2 = 1;
             int counter = 0;
 
@@ -150,8 +153,6 @@ class Program
                     Console.WriteLine(new string('*', counterStars));
                 }
             }
-
-
         }
         //ex.8
         {
@@ -170,7 +171,7 @@ class Program
         }
         //ex.9
         {
-            Console.WriteLine("Zadanie 9");
+            Console.WriteLine("ex. 9");
             Console.WriteLine();
 
             Console.WriteLine("Podaj liczbę:");
@@ -190,10 +191,10 @@ class Program
         }
         //ex.10 Euklides z dzieleniem
         {
-            Console.WriteLine("Zadanie 10");
+            Console.WriteLine("ex. 10");
             Console.WriteLine();
 
-            static int NWD (int a, int b)
+            static int NWD(int a, int b)
             {
                 while (a != 0 && b != 0)
                 {
@@ -220,7 +221,8 @@ class Program
             int a = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Podaj drugą liczbę:");
             int b = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("NWD(" + a + "," + b + ")= " + NWD(a, b));
+            Console.Write($"Najmniejsza wspólna wielokrotność {a} i {b} to: ");
+            Console.WriteLine(a*b/NWD(a,b));
         }
     }    
 }

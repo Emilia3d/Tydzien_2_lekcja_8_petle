@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics.CodeAnalysis;
+using System.Text;
 using System.Net.Security;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 class Program
 {
@@ -149,5 +153,74 @@ class Program
 
 
         }
-    }
+        //ex.8
+        {
+            Console.WriteLine("\n ex. 8");
+            Console.WriteLine("Wpisz wyraz do odwrócenia:");
+            string word = Console.ReadLine();
+            string reverse = "";
+
+            for (int i = word.Length - 1; i >= 0; i--)
+            {
+                reverse += word[i];
+            }
+            Console.WriteLine(reverse);
+
+            Console.WriteLine();
+        }
+        //ex.9
+        {
+            Console.WriteLine("Zadanie 9");
+            Console.WriteLine();
+
+            Console.WriteLine("Podaj liczbę:");
+            int decimalNum = int.Parse(Console.ReadLine());
+            //int i = 1;
+            string binary = "";
+
+            while (decimalNum > 0)
+            {
+                int i = decimalNum % 2;
+                decimalNum /= 2;
+                binary = i.ToString() + binary;
+            }
+            Console.WriteLine($"Postać binarna to: {binary}.");
+
+            Console.WriteLine();
+        }
+        //ex.10 Euklides z dzieleniem
+        {
+            Console.WriteLine("Zadanie 10");
+            Console.WriteLine();
+
+            static int NWD (int a, int b)
+            {
+                while (a != 0 && b != 0)
+                {
+                    if (a > b)
+                    {
+                        a = a % b;
+                    }
+                    else
+                    {
+                        b = b % a;
+                    }
+                }
+                if (a != 0)
+                {
+                    return a;
+                }
+                else
+                {
+                    return b;
+                }
+            }
+
+            Console.WriteLine("Podaj pierwszą liczbę:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Podaj drugą liczbę:");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("NWD(" + a + "," + b + ")= " + NWD(a, b));
+        }
+    }    
 }

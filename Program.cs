@@ -120,40 +120,21 @@ class Program
             string varDiagonal = Console.ReadLine();
             int diagonal = int.Parse(varDiagonal);
 
-            if (diagonal % 2 != 0)  //dla nieparzystych
+            for (int counterStars = diagonal%2; counterStars <= diagonal; counterStars = counterStars + 2)
             {
-                for (int counterStars = 1; counterStars <= diagonal; counterStars = counterStars + 2)
-                {
-                    int counterSpace = (diagonal - counterStars) / 2;
-                    Console.Write(new string(' ', counterSpace));
-                    Console.WriteLine(new string('*', counterStars));
-                }
-
-                for (int counterStars = diagonal - 2; counterStars >= 1; counterStars = counterStars - 2)
-                {
-                    int counterSpace = (diagonal - counterStars) / 2;
-                    Console.Write(new string(' ', counterSpace));
-                    Console.WriteLine(new string('*', counterStars));
-                }
+                int counterSpace = (diagonal - counterStars) / 2;
+                Console.Write(new string(' ', counterSpace));
+                Console.WriteLine(new string('*', counterStars));
             }
 
-            else    //dla parzystych
+            for (int counterStars = diagonal - 2; counterStars >= 1; counterStars = counterStars - 2)
             {
-                for (int counterStars = 2; counterStars <= diagonal; counterStars = counterStars + 2)
-                {
-                    int counterSpace = (diagonal - counterStars) / 2;
-                    Console.Write(new string(' ', counterSpace));
-                    Console.WriteLine(new string('*', counterStars));
-                }
-
-                for (int counterStars = diagonal; counterStars >= 2; counterStars = counterStars - 2)
-                {
-                    int counterSpace = (diagonal - counterStars) / 2;
-                    Console.Write(new string(' ', counterSpace));
-                    Console.WriteLine(new string('*', counterStars));
-                }
+                int counterSpace = (diagonal - counterStars) / 2;
+                Console.Write(new string(' ', counterSpace));
+                Console.WriteLine(new string('*', counterStars));
             }
         }
+
         //ex.8
         {
             Console.WriteLine("\n ex. 8");
@@ -222,7 +203,7 @@ class Program
             Console.WriteLine("Podaj drugą liczbę:");
             int b = Convert.ToInt32(Console.ReadLine());
             Console.Write($"Najmniejsza wspólna wielokrotność {a} i {b} to: ");
-            Console.WriteLine(a*b/NWD(a,b));
+            Console.WriteLine(a * b / NWD(a, b));
         }
     }    
 }
